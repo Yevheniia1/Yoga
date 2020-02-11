@@ -1,0 +1,1149 @@
+@import 'fonts.scss';
+@import 'colors.scss';
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+	font-size: $main-font-size;
+	font-family: $font-regular;
+	overflow-x: hidden;
+  font-size: 18px;
+  
+    @media screen and (max-width: 768px){
+      padding: 0;
+    }
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-size: 50px;
+  font-family: $font-bold;
+  color: $h-color;
+  line-height: 1.2;
+
+  @media screen and (max-width: 1200px){
+    font-size: 43px;
+  }
+
+  @media screen and (max-width: 992px){
+    font-size: 37px;
+  }
+
+  @media screen and (max-width: 768px){
+    font-size: 33px;
+  }
+
+  @media screen and (max-width: 567px){
+    font-size: 27px;
+  }
+
+  
+  @media screen and (max-width: 360px){
+    font-size: 24px;
+  }
+}
+
+.paragraph{
+  font-family: $font-light;
+  line-height: 2.3;
+  color: $main-color;
+
+  @media screen and (max-width: 1200px){
+    font-size: 17px;
+    line-height: 2.1;
+  }
+
+  @media screen and (max-width: 992px){
+    line-height: 1.9;
+  }
+
+  @media screen and (max-width: 768px){
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  @media screen and (max-width: 567px){
+  }
+
+  @media screen and (max-width: 360px){
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+.article{
+  font-family: $font-bold;
+  font-size: 24px;
+  color: #656565;
+
+  @media screen and (max-width: 1200px){
+    font-size: 23px;
+  }
+
+  @media screen and (max-width: 992px){
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: 768px){
+    font-size: 21px;
+  }
+
+  @media screen and (max-width: 567px){
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 360px){
+    font-size: 19px;
+  }
+
+}
+
+.btn{
+  background-color: $active-color;
+  color: #FFF;
+  text-decoration: none;
+  border: solid 2px $active-color;
+  transition: 0.2s;
+  box-shadow: -5px 5px 20px $active-color;
+
+	&:hover{
+	background-color: transparent;
+	color: $active-color;
+	box-shadow: none;
+  } 
+}
+
+.link-wrap{
+  text-align: center;
+
+  .read-more-link{
+    margin-left: 55px;
+    text-decoration: none;
+    color: #3cbef1;
+
+    @media screen and (max-width: 1200px){
+      margin: 0px 0px 0px 0px !important; 
+    }
+  }
+}
+
+/* MENU-BTN */
+
+.menu-btn{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 999;
+  top: 42px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+
+  @media screen and (max-width: 992px){
+    display: block;
+  }
+}
+
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+  position: absolute;
+  width: 26px;
+  height: 2px;
+  top: 50%; margin-top: -1px;
+  left: 50%; margin-left: -13px;
+  border-radius: 3px;
+  background-color: $main-color;
+  font-weight: normal;
+  transition: 0.2s;
+
+}
+
+.menu-btn span::before,
+.menu-btn span::after {
+  display: block;
+  content: "";
+  transition: 0.5s;
+}
+
+.menu-btn span::before{
+  transform: translateY(6px);
+}
+
+.menu-btn span::after{
+  transform: translateY(-6px);
+}
+
+.menu-btn_active span{
+  height: 0;
+  transition: 0.3;
+}
+
+.menu-btn_active{
+   position: fixed;
+}
+
+.menu-btn_active span::before{
+  transform: rotate(40deg);
+  background-color: $active-color;
+}
+
+ .menu-btn_active span::after{
+  transform: rotate(-40deg);
+  background-color: $active-color;
+}
+
+.top-nav_menu_active{
+  visibility: visible !important;
+  transform: translateX(0px) !important;
+}
+
+/* MENU-BTN */
+
+.container{
+  max-width: 1420px;
+  margin: 0 auto;
+}
+
+/* HEADER START */
+
+header{
+  background: url(../img/header-bg.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding-bottom: 700px;
+
+  @media screen and (max-width: 1200px){
+	  padding-bottom: 570px;
+  }
+  
+	@media screen and (max-width: 768px){
+	  padding-bottom: 470px;
+  }
+  
+	@media screen and (max-width: 440px){
+      background-position: center;
+      padding-bottom: 200px;
+    }
+}
+
+.heading{ 
+   padding: 80px 0px 160px 0px;
+   max-width: 1380px;
+   margin: 0 auto;
+
+   @media screen and (max-width: 992px){
+     padding-top: 45px;
+   }
+
+   @media screen and (max-width: 568px){
+     padding: 45px 0px 80px 0px;
+   }
+
+  .logo{
+    color: $active-color;
+    font-size: 32px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: $font-heavy;
+  }
+
+  .top-nav_menu{
+    transition: 1s;
+    
+  	@media screen and (max-width: 1340px){
+      width: 550px;
+    }
+
+    @media screen and (max-width: 992px){
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 100;
+      background-color: rgba(255,255,255,1);
+      visibility: hidden;
+      transform: translateX(992px);
+    }
+
+    ul{
+      display: flex;
+      align-items: flex-end;
+      margin: 0;
+
+	    @media screen and (max-width: 992px){
+	      align-items: center;
+	      flex-direction: column;
+	      justify-content: space-around;
+	      padding-top: 30px;
+	      height: 60vh;
+	      max-height: 260px;
+      }  
+      
+      li{
+      	list-style: none;
+      	@media screen and (max-width: 992px){
+	      margin-bottom: 20px;
+      }  
+      
+      a{
+        font-size: $main-font-size;
+        font-weight: 500;
+        color: $main-color;
+        text-decoration: none;
+        padding: 0 30px;
+        transition: 0.2s;
+          &:hover{
+              color: $active-color;
+          }
+        }
+      }
+    }
+  }
+
+  .login-btn{
+    padding: 12px 40px;
+    border-radius: 35px;
+    letter-spacing: 3;
+    margin-right: 20px;
+    @media screen and (max-width: 440px){
+     display: none
+    }
+  }
+
+  .login-btn_active{
+    display: block;
+  }
+}
+
+.header-description{
+  padding-left: 115px;
+
+  @media screen and (max-width: 992px){
+     padding: 0px 20px;
+  }
+
+  @media screen and (max-width: 567px){
+     padding: 0px 5px;
+  }
+
+  h1{
+    max-width: 550px;
+    line-height: 1.3;
+    padding-bottom: 50px;
+  }
+
+  p{
+    max-width: 480px;
+    padding-bottom: 60px;
+  }
+
+  .act-btn-container{
+
+    .btn-service{
+      font-size: 20px;
+      padding: 30px 80px;
+      border-radius: 40px;
+
+      @media screen and (max-width: 992px){
+        font-size: 19px;
+        padding: 25px 70px;
+      }
+
+      @media screen and (max-width: 768px){
+        font-size: 17px;
+        padding: 20px 60px;
+      }
+
+      @media screen and (max-width: 567px){
+        font-size: 16px;
+        padding: 15px 50px;
+      }
+
+      @media screen and (max-width: 450px){
+        font-size: 15px;
+        padding: 10px 40px;
+      }
+
+      @media screen and (max-width: 350px){
+        font-size: 14px;
+        padding: 8px 36px;
+      }
+
+      @media screen and (max-width: 320px){
+        font-size: 13px;
+        padding: 6px 30px;
+      }
+    }
+
+    .btn-signup{
+      @extend .btn-service;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* HEADER END */
+
+/* WHY BERYOGA START */
+
+.why-beryoga{
+
+  .why-beryoga_title{
+    padding-bottom: 130px;
+    
+  	@media screen and (max-width: 1200px){
+	  padding-bottom: 100px;
+    }
+
+  	@media screen and (max-width: 567px){
+	  padding-bottom: 70px;
+    }
+
+    h2{
+      text-align: center;
+      padding-bottom: 40px;
+    }
+
+    p{
+      text-align: center;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+  }
+
+  .advantages-container{
+  	padding-bottom: 125px;
+  	@media screen and (max-width: 1200px){
+	  padding-bottom: 65px;
+  }
+  
+    .advantages-block{
+
+      article{
+        padding: 80px 0px 35px 0px;
+        text-align: center;
+
+          @media screen and (max-width: 1200px){
+           padding: 50px 0px 25px 0px;
+        }
+      }
+
+      p{
+        max-width: 275px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.6;
+      }
+      
+      img{
+      	display: block;
+        margin: 0 auto;
+
+        @media screen and (max-width: 768px){
+          max-width: 50%;
+        }
+      }
+
+      @media screen and (max-width: 768px){
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+/* WHY BERYOGA END */
+
+/* CLASSES START */
+
+.classes{
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-bottom: 230px;
+
+  @media screen and (max-width: 1200px){
+	padding-bottom: 80px;
+  }
+
+  @media screen and (max-width: 567px){
+	padding-bottom: 20px;
+  }
+
+  .classes_decorate_img1{
+  	position: absolute;
+  	left: 0;
+    top: 330px;
+    
+  	@media screen and (max-width: 1200px){
+	    display: none;
+    }
+  }
+
+  .classes_decorate_img2{
+  	position: absolute;
+  	right: 0px;
+    top: 0;
+    
+  	@media screen and (max-width: 1200px){
+	    display: none;
+    }
+  }
+
+  .classes-container{
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .classes-container{
+    padding-top: 120px;
+    
+  	@media screen and (max-width: 1200px){
+	  padding-top: 0px;
+    }
+
+    .classes-f-col{
+
+      img{
+        max-width: 100%;
+        height: auto;
+        display: block;
+
+	    @media screen and (max-width: 1200px){
+        margin: 0 auto;
+        max-width: 85%;
+        }
+      }
+    }
+
+    .classes-s-col{
+      padding-top: 30px;
+      h3{
+        padding-bottom: 80px;
+        
+      	@media screen and (max-width: 1200px){
+		      text-align: center;
+	      }
+      }
+
+      .classes-item{
+        margin-left: 72px;
+        
+      	@media screen and (max-width: 1200px){
+	        margin-left: 0px;
+        }
+        
+      	article{
+          position: relative;
+          
+      	  &::after{
+      	    content: url('../img/classes_check_img.png');
+            position: absolute;
+            left: -50px;
+            top: -2px;
+            @media screen and (max-width: 1200px){
+	          left: 50%;
+	          margin-left: -15px;
+	          top: -40px;
+	        }
+        }
+
+          @media screen and (max-width: 1200px){
+	          text-align: center;
+	        }
+        }
+
+	    p{
+	  	  padding: 15px 0px 50px 0px;
+        max-width: 460px;
+        
+	      @media screen and (max-width: 1200px){
+	        text-align: center;
+	        margin: 0 auto;
+	        padding: 15px 0px 60px 0px;
+	        }
+	      }
+      }
+    }
+  }
+}
+
+/* CLASSES END */
+
+/* HEALING POWER START */
+
+.healing-power{
+
+  .healing-power_info{
+
+    span{
+      font-size: 20px;
+      color: $main-color;
+    }
+
+    h4{
+      padding: 13px 0px 70px 0px;
+
+      @media screen and (max-width: 567px){
+		    padding-bottom: 40px;
+	    }
+    }
+
+    p{
+      max-width: 390px;
+      margin-left: 55px;
+      padding-bottom: 70px;
+
+      @media screen and (max-width: 1200px){
+        text-align: center;
+        margin: 0 auto;
+        max-width: 600px;
+      }
+
+      @media screen and (max-width: 567px){
+        padding-bottom: 30px;
+      }
+    }
+
+    .read-more-link{
+      margin-left: 55px;
+    }
+  }
+
+  .healing-power_img{
+    img{
+    	max-width: 100%;
+    	height: auto;
+      display: block;
+      
+      @media screen and (max-width: 1200px){
+        margin: 0 auto;
+        padding-bottom: 50px;
+        max-width: 85%;
+	    }
+    }
+  }
+}
+
+/* HEALING POWER END */
+
+/* FIVE WAYS START */
+
+.five-ways{
+  padding-top: 420px;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+
+  @media screen and (max-width: 1200px){
+	  padding-top: 160px;
+  }
+
+  @media screen and (max-width: 567px){
+	  padding-top: 60px;
+  }
+
+  .five-ways_decorate_img1{
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @media screen and (max-width: 1200px){
+	    display: none;
+    }
+  }
+
+  .five-ways_decorate_img2{
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @media screen and (max-width: 1200px){
+	    display: none;
+    }
+  }
+
+  .five-ways_decorate_img3{
+    @extend .five-ways_decorate_img1;
+  }
+
+  .five-ways_img{
+
+  	img{
+      max-width: 100%;
+      height: auto;
+      display: block;
+
+      @media screen and (max-width: 1200px){
+        margin: 0 auto;
+        padding-bottom: 40px;
+        max-width: 85%;
+	    }
+  	}
+  }
+
+  .five-ways_info{
+
+    h5{
+      padding-bottom: 65px;
+
+        @media screen and (max-width: 1200px){
+          text-align: center;
+        }
+
+      @media screen and (max-width: 567px){
+          padding-bottom: 40px;
+          text-align: none;
+        }
+    }
+
+    .five-ways_info_paragraphs{
+
+	    p{
+	      max-width: 550px;
+	      padding-bottom: 10px;
+        margin-left: 100px;
+        
+	      &:last-child{
+          padding-bottom: 60px;
+          
+	        @media screen and (max-width: 567px){
+            padding-bottom: 40px;
+          }
+        }
+        
+	      @media screen and (max-width: 1200px){
+          text-align: center;
+          margin: 0 auto;
+        }
+	    }
+     }  
+
+    .read-more-link{
+      margin-left: 100px;
+    }
+  }
+}
+
+/* FIVE WAYS END */
+
+/* FOOTER / OFFERS START */
+
+.offers{
+  background: url(../img/footer-bg.png);
+  padding-top: 550px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  overflow-x: hidden;
+
+  @media screen and (max-width: 1200px){
+	 background-position: center bottom;
+	 padding-top: 150px;
+  }
+
+  @media screen and (max-width: 478px){
+	 padding-top: 80px;
+  }
+
+  .offers-packets{
+  	display: flex;
+  	justify-content: space-between;
+    padding-bottom: 150px;
+    
+  	@media screen and (max-width: 1200px){
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 768px){
+	   padding-bottom: 60px;
+    }
+
+    .offers-first-packet{
+      background-color: #FFF;
+      padding: 60px 0px 30px 0px;
+      width: 475px;
+      height: 680px;
+      border-radius: 20px;
+      box-shadow: -8px 8px 20px #7ce0fb;
+      
+      @media screen and (max-width: 1200px){
+        margin-bottom: 40px;
+      } 
+
+      @media screen and (max-width: 768px){
+        width: 400px;
+        height: 600px;
+        padding: 45px 0px 30px 0px;
+      }
+      
+      @media screen and (max-width: 478px){
+        width: 290px;
+        height: 490px;
+        padding: 15px 0px 10px 0px;
+      }
+      
+      ul{
+        list-style: none;
+        
+        li{
+          padding-left: 125px;
+          position: relative;
+          margin-bottom: 30px;
+          font-family: $font-light;
+          line-height: 2.3;
+          color: $main-color;
+
+            @media screen and (max-width: 478px){
+              padding-left: 70px;
+              font-size: 17px;
+            }
+
+            &::after{
+              content: url('../img/check_offer1.png');
+              position: absolute;
+              left: 55px;
+
+            @media screen and (max-width: 478px){
+              left: 15px;
+            }
+          }
+        }
+      }
+    
+      .offers_package-rate{
+        position: relative;
+        padding-top: 50px;
+        left: 50%;
+        margin-left: -100px;
+        
+        @media screen and (max-width: 768px){
+          padding-top: 0px;
+        }
+        
+        @media screen and (max-width: 478px){
+          margin-left: -80px;
+        }
+        
+        .sign-dollar{
+          position: absolute;
+          top: 45px;
+          left: -25px;
+          font-size: 48px;
+          color: #7e7c7c;
+          
+          @media screen and (max-width: 478px){
+            top: 25px;
+          }
+        }
+        
+        .offer-cost{
+          font-size: 150px;
+          color: #7e7c7c;
+          margin-left: 20px;
+          
+          @media screen and (max-width: 768px){
+            font-size: 130px;
+          }
+          
+          @media screen and (max-width: 478px){
+            font-size: 95px;
+          }
+        }
+        
+        .offer-time{
+          font-size: 30px;
+          color: #7e7c7c;
+        }
+
+        .payment{
+          padding: 20px 0px 40px 0px;
+          color: #7e7c7c;
+          margin-left: 40px;
+          display: block;
+          font-family: $font-oblique;
+          
+          @media screen and (max-width: 478px){
+            margin-left: 25px;
+            padding: 15px 0px 25px 0px;
+          }  
+        }
+      }
+    
+      .btn-become-member{
+        border-radius: 40px;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        background-color: #7ce0fb;
+        width: 225px;
+        border: solid 2px #7ce0fb;
+        height: 66px;
+        line-height: 66px;
+        box-shadow: -8px 8px 20px #7ce0fb;
+      
+        &:hover{
+          color: #7ce0fb;
+          background-color: transparent;
+          box-shadow: none;
+        }
+        
+        @media screen and (max-width: 992px){
+          font-size: 17px;
+          width: 200px;
+          height: 55px;
+          line-height: 55px;
+        }
+        
+        @media screen and (max-width: 567px){
+          font-size: 14px;
+          width: 180px;
+          height: 45px;
+          line-height: 45px;
+        }
+      }
+    }
+    
+    .offers-second-packet{
+      @extend .offers-first-packet;
+      box-shadow: 0px 0px 40px 0px #fcb3b4;
+      width: 500px;
+      height: 768px;
+      z-index: 1;
+      padding: 0px;
+      overflow-x: hidden;
+      position: relative;
+      top: -50px;
+
+      @media screen and (max-width: 1200px){
+        top: 0px;
+      } 
+
+      @media screen and (max-width: 768px){
+        width: 425px;
+        height: 686px;
+      }
+
+      @media screen and (max-width: 478px){
+        width: 290px;
+        height: 490px;
+      }
+
+      article{
+        text-align: center;
+        font-size: 30px;
+        color: #FFF;
+        font-family: $font-bold;
+        text-transform: uppercase;
+        background-color: $active-color;
+        padding: 45px 0px 35px 0px;
+        margin-bottom: 40px;
+        
+        @media screen and (max-width: 768px){
+          margin-bottom: 30px;
+          padding: 35px 0px 25px 0px;
+
+        }
+
+        @media screen and (max-width: 478px){
+          margin-bottom: 20px;
+          padding: 25px 0px 15px 0px;
+          font-size: 24px;
+        }
+      }
+
+      ul{
+
+        li{
+
+          &:after{ 
+          content: url('../img/check_offer2.png');	
+          }
+
+          @media screen and (max-width: 478px){
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      .btn-become-member{
+        box-shadow: -8px 8px 20px $active-color;
+        background-color: $active-color;
+        border: solid 2px $active-color;
+
+        &:hover{
+          color: $active-color;
+        }
+      }
+
+      .offers_package-rate{
+        margin-left: -165px;
+
+        @media screen and (max-width: 768px){
+          margin-left: -145px;
+        }
+
+        @media screen and (max-width: 478px){
+          margin-left: -105px;
+        }
+
+        .payment{
+          margin-left: 30px;
+
+          @media screen and (max-width: 478px){
+            margin-left: -10px;
+          }
+        }
+
+        .offer-cost{
+          @media screen and (max-width: 768px){
+            font-size: 130px;
+          }
+
+          @media screen and (max-width: 478px){
+            font-size: 80px;
+          }
+        }
+      }
+    }
+    .offers-third-packet{
+      @extend .offers-first-packet;
+
+      article{
+        text-align: center;
+        font-size: 30px;
+        color: #7e7c7c;
+        font-family: $font-bold;
+        padding-bottom: 40px;
+      }
+    }
+  }
+}
+
+.footer-wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-container{
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.5);
+  padding: 110px 0px 40px 0px;
+  border-top-right-radius: 200px;
+  border-top-left-radius: 200px;
+  max-width: 1420px;
+
+   @media screen and (max-width: 1200px){
+	  border-top-right-radius: 60px;
+    border-top-left-radius: 60px;
+  }
+  
+  @media screen and (max-width: 568px){
+	  padding-bottom: 40px;
+
+  }
+  
+  .contact-us{
+
+    @media screen and (max-width: 992px){
+      padding-bottom: 30px;
+    }
+  
+    span{
+      font-family: $font-heavy;
+      text-transform: uppercase;
+      color: #7e7c7c;
+      text-align: center;
+      margin-left: 25px;
+
+      @media screen and (max-width: 1200px){
+        margin-left: 0px;
+      }
+    }
+
+    p{
+      max-width: 200px;
+      font-size: 16px;
+      line-height: 1.6;
+      padding-top: 50px;
+      text-align: left;
+        
+      @media screen and (max-width: 576px){
+        max-width: 200px;
+        margin: 0 0 0 0;
+      }
+    }
+
+    a{
+      text-decoration: none;
+      color: #7e7c7c;
+
+      &:hover{
+        color: $active-color;
+      }
+    }
+  }
+
+  .about-us{
+
+  	@media screen and (max-width: 568px){
+	  padding-bottom: 40px;
+  }
+  
+    span{
+      font-family: $font-heavy;
+      text-transform: uppercase;
+      color: #7e7c7c;
+      text-align: center;
+
+    }
+
+    nav{
+      padding-top: 55px;
+      list-style-type: none;
+
+      @media screen and (max-width: 578px){
+        padding: 25px 0px 40px 0px;
+      }
+
+      li{
+        padding-bottom: 20px;
+
+        a{
+          text-decoration: none;
+          color: #7e7c7c;
+          transition: 0.2s;
+
+          &:hover{
+            color: $active-color;
+          }
+        }
+      }
+    }
+  }
+
+  .our-programs{
+    @extend .about-us;
+  }
+
+  .support-trails{
+    @extend .about-us;
+  }
+
+  p{
+  	padding: 105px 0 0px 0px;
+  	text-align: center;
+    color: #7e7c7c;
+
+    @media screen and (max-width: 578px){
+      padding: 0px 0px 0px 0px;
+      font-size: 16px;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+  }
+}
+

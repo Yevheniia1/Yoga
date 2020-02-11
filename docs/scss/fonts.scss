@@ -1,0 +1,43 @@
+@font-face {
+font-family: 'Fivo Sans Light';
+font-style: normal;
+font-weight: normal;
+src: local('Fivo Sans Light'), url('../fonts/FivoSans-Light.otf');
+}
+
+@font-face {
+font-family: 'Fivo Sans Heavy';
+font-style: normal;
+font-weight: normal;
+src: local('Fivo Sans Heavy'), url('../fonts/FivoSans-Heavy.otf');
+}
+
+@font-face {
+font-family: 'Fivo Sans Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Fivo Sans Regular'), url('../fonts/FivoSans-Regular.otf');
+}
+
+@font-face {
+font-family: 'Fivo Sans Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Fivo Sans Bold'), url('../fonts/FivoSans-Bold.otf');
+}
+
+@font-face {
+font-family: 'Fivo Sans Oblique';
+font-style: normal;
+font-weight: normal;
+src: local('Fivo Sans Oblique'), url('../fonts/FivoSans-Light-Oblique.otf');
+}
+
+$font-oblique: 'Fivo Sans Oblique', sans-serif;;
+$font-regular: 'Fivo Sans Regular', sans-serif;
+$font-heavy: 'Fivo Sans Heavy', sans-serif;
+$font-light: 'Fivo Sans Light', sans-serif;
+$font-bold: 'Fivo Sans Bold', sans-serif;
+
+
+$main-font-size: 18px;
