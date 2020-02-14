@@ -1,0 +1,109 @@
+.paragraph{
+  @include font(300);
+  color: $gray;
+  font-size: .9rem;
+  line-height: 2.3;
+  text-indent: 15px;
+  margin: 0;
+
+  @include breakpoint-lg {
+    line-height: 2.1;
+  }
+
+  @include breakpoint-md {
+    line-height: 1.9;
+  }
+
+  @include breakpoint-xs {
+   line-height: 1.7;
+  }
+}
+
+.btn{
+  background-color: $active-color;
+  color: #FFF;
+  text-decoration: none;
+  border: solid 2px $active-color;
+  transition: 0.2s;
+  box-shadow: -5px 5px 20px $active-color;
+
+    &:hover{
+    background-color: transparent;
+    color: $active-color;
+    box-shadow: none;
+  } 
+}
+
+.link-wrap{
+  text-align: center;
+
+  .read-more-link{
+    margin-left: 55px;
+    text-decoration: none;
+    color: #3cbef1;
+
+    @media screen and (max-width: 1200px){
+      margin: 0px 0px 0px 0px !important; 
+    }
+  }
+}
+
+/* MENU-BTN */
+
+.menu-btn{
+  @include size(40px, 40px);
+  @include reset-button;
+  position: relative;
+  z-index: 1000;
+  cursor: pointer;
+  display: none;
+
+  @include breakpoint-md{
+    display: block;
+  }
+
+  span{
+
+    &, &::before, &::after {
+      content: "";
+      @include size(26px, 2px);
+      position: absolute;
+      top: 50%; 
+      left: 50%; 
+      margin-top: -1px;
+      margin-left: -13px;
+      border-radius: 3px;
+      background-color: $gray;
+      transition: $transition-base;
+    }
+
+    &::after {
+     transform: translateY(-6px);
+    }
+
+    &:before {
+      transform: translateY(6px);
+    }
+  }
+}
+
+.menu-btn_active{
+
+   span {
+    height: 0;
+    transition: 0.3;
+
+    &:before {
+      transform: rotate(40deg);
+      background-color: $active-color;
+    }
+
+    &:after {
+      transform: rotate(-40deg);
+      background-color: $active-color;
+    }
+  }
+}
+
+
+/* MENU-BTN */

@@ -1,383 +1,152 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/extends';
+@import 'helpers/utilities';
 @import 'fonts.scss';
-@import 'colors.scss';
-
-*{
-  padding: 0;
-  margin: 0;
-}
-
-body{
-	font-size: $main-font-size;
-	font-family: $font-regular;
-	overflow-x: hidden;
-  font-size: 18px;
-  
-    @media screen and (max-width: 768px){
-      padding: 0;
-    }
-}
-
-h1, h2, h3, h4, h5, h6{
-  font-size: 50px;
-  font-family: $font-bold;
-  color: $h-color;
-  line-height: 1.2;
-
-  @media screen and (max-width: 1200px){
-    font-size: 43px;
-  }
-
-  @media screen and (max-width: 992px){
-    font-size: 37px;
-  }
-
-  @media screen and (max-width: 768px){
-    font-size: 33px;
-  }
-
-  @media screen and (max-width: 567px){
-    font-size: 27px;
-  }
-
-  
-  @media screen and (max-width: 360px){
-    font-size: 24px;
-  }
-}
-
-.paragraph{
-  font-family: $font-light;
-  line-height: 2.3;
-  color: $main-color;
-
-  @media screen and (max-width: 1200px){
-    font-size: 17px;
-    line-height: 2.1;
-  }
-
-  @media screen and (max-width: 992px){
-    line-height: 1.9;
-  }
-
-  @media screen and (max-width: 768px){
-    font-size: 16px;
-    line-height: 1.9;
-  }
-
-  @media screen and (max-width: 567px){
-  }
-
-  @media screen and (max-width: 360px){
-    font-size: 15px;
-    line-height: 1.7;
-  }
-}
-
-.article{
-  font-family: $font-bold;
-  font-size: 24px;
-  color: #656565;
-
-  @media screen and (max-width: 1200px){
-    font-size: 23px;
-  }
-
-  @media screen and (max-width: 992px){
-    font-size: 22px;
-  }
-
-  @media screen and (max-width: 768px){
-    font-size: 21px;
-  }
-
-  @media screen and (max-width: 567px){
-    font-size: 20px;
-  }
-
-  @media screen and (max-width: 360px){
-    font-size: 19px;
-  }
-
-}
-
-.btn{
-  background-color: $active-color;
-  color: #FFF;
-  text-decoration: none;
-  border: solid 2px $active-color;
-  transition: 0.2s;
-  box-shadow: -5px 5px 20px $active-color;
-
-	&:hover{
-	background-color: transparent;
-	color: $active-color;
-	box-shadow: none;
-  } 
-}
-
-.link-wrap{
-  text-align: center;
-
-  .read-more-link{
-    margin-left: 55px;
-    text-decoration: none;
-    color: #3cbef1;
-
-    @media screen and (max-width: 1200px){
-      margin: 0px 0px 0px 0px !important; 
-    }
-  }
-}
-
-/* MENU-BTN */
-
-.menu-btn{
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  z-index: 999;
-  top: 42px;
-  right: 20px;
-  cursor: pointer;
-  display: none;
-
-  @media screen and (max-width: 992px){
-    display: block;
-  }
-}
-
-.menu-btn span,
-.menu-btn span::before,
-.menu-btn span::after {
-  position: absolute;
-  width: 26px;
-  height: 2px;
-  top: 50%; margin-top: -1px;
-  left: 50%; margin-left: -13px;
-  border-radius: 3px;
-  background-color: $main-color;
-  font-weight: normal;
-  transition: 0.2s;
-
-}
-
-.menu-btn span::before,
-.menu-btn span::after {
-  display: block;
-  content: "";
-  transition: 0.5s;
-}
-
-.menu-btn span::before{
-  transform: translateY(6px);
-}
-
-.menu-btn span::after{
-  transform: translateY(-6px);
-}
-
-.menu-btn_active span{
-  height: 0;
-  transition: 0.3;
-}
-
-.menu-btn_active{
-   position: fixed;
-}
-
-.menu-btn_active span::before{
-  transform: rotate(40deg);
-  background-color: $active-color;
-}
-
- .menu-btn_active span::after{
-  transform: rotate(-40deg);
-  background-color: $active-color;
-}
-
-.top-nav_menu_active{
-  visibility: visible !important;
-  transform: translateX(0px) !important;
-}
-
-/* MENU-BTN */
-
-.container{
-  max-width: 1420px;
-  margin: 0 auto;
-}
+@import 'base';
+@import 'components';
 
 /* HEADER START */
 
 header{
+  width: 100%;
+  min-height: 1526px;
+  margin: 0 auto;
+  @include background-img('../img/header-bg.png', cover);
+  background-position: center top;
 
-  @media screen and (max-width: 1200px){
-	  padding-bottom: 570px;
+  @include breakpoint-xl {
+    min-height: 1500px;
   }
-  
-	@media screen and (max-width: 768px){
-	  padding-bottom: 470px;
+
+  @include breakpoint-lg {
+    min-height: 1000px;
   }
-  
-	@media screen and (max-width: 440px){
-      background-position: center;
-      padding-bottom: 200px;
-    }
+
+  @include breakpoint-md {
+    min-height: 850px;
+  }
+
+  @include breakpoint-sm {
+    background-position: left top;
+  }
 }
 
 .heading{ 
-   padding: 80px 0px 160px 0px;
-   max-width: 1380px;
-   margin: 0 auto;
-
-   @media screen and (max-width: 992px){
-     padding-top: 45px;
-   }
-
-   @media screen and (max-width: 568px){
-     padding: 45px 0px 80px 0px;
-   }
+   padding: 4rem 0 8rem;
 
   .logo{
-    color: $active-color;
-    font-size: 32px;
-    font-weight: 600;
-    text-decoration: none;
-    font-family: $font-heavy;
+    @extend %logo;
   }
 
   .top-nav_menu{
-    transition: 1s;
-    
-  	@media screen and (max-width: 1340px){
-      width: 550px;
-    }
+    transition: .8s;
 
-    @media screen and (max-width: 992px){
+    @include breakpoint-md{
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: 100;
-      background-color: rgba(255,255,255,1);
+      background-color: $white;
       visibility: hidden;
       transform: translateX(992px);
+
+      &_active{
+        visibility: visible !important;
+        z-index: 100;
+        transform: translateX(0px) !important;
+        }
     }
+    
+    .top-nav_list{
+      @include horizontal-list;
 
-    ul{
-      display: flex;
-      align-items: flex-end;
-      margin: 0;
-
-	    @media screen and (max-width: 992px){
-	      align-items: center;
-	      flex-direction: column;
-	      justify-content: space-around;
-	      padding-top: 30px;
-	      height: 60vh;
-	      max-height: 260px;
-      }  
-      
-      li{
-      	list-style: none;
-      	@media screen and (max-width: 992px){
-	      margin-bottom: 20px;
-      }  
+      @include breakpoint-md{
+          padding: calc(4rem + 50px) 50px 0;
+      }
       
       a{
-        font-size: $main-font-size;
-        font-weight: 500;
-        color: $main-color;
-        text-decoration: none;
+        @extend %menu-item;
         padding: 0 30px;
-        transition: 0.2s;
-          &:hover{
-              color: $active-color;
-          }
+        transition: $transition-base;
+
+        @include breakpoint-md{
+          display: block;
+          text-align: center;
+          line-height: 5;
+        }
+        
+        &:hover{
+          color: $active-color;
         }
       }
     }
   }
 
-  .login-btn{
-    padding: 12px 40px;
+  #login{
+    margin-left: 100px;
+    padding: 0 40px;
+    border: 0;
     border-radius: 35px;
-    letter-spacing: 3;
-    margin-right: 20px;
-    @media screen and (max-width: 440px){
-     display: none
-    }
-  }
 
-  .login-btn_active{
-    display: block;
+    letter-spacing: 3;
+    color: $white;
+    transition: all $transition-base;
+
+    @include breakpoint-md{
+      width: 20%;
+      margin: 2rem auto;
+      line-height: 2.5;
+    }
+
+    &:hover {
+      box-shadow: inset 0px 0px 0px 2px rgba(255,106,109,1);
+      transition: all $transition-base;
+    }
   }
 }
 
 .header-description{
-  padding-left: 115px;
+  width: 50%;
+  padding-left: 8%;
 
-  @media screen and (max-width: 992px){
-     padding: 0px 20px;
+  @include breakpoint-lg{
+    width: 80%;
   }
 
-  @media screen and (max-width: 567px){
-     padding: 0px 5px;
+  @include breakpoint-md{
+    width: 100%;
+    padding-left: 0;
   }
 
-  h1{
-    max-width: 550px;
+  .page-title{
+    @extend %section-title;
     line-height: 1.3;
-    padding-bottom: 50px;
+    margin-bottom: 2.5rem;
   }
 
-  p{
-    max-width: 480px;
-    padding-bottom: 60px;
+  .paragraph{
+    margin-bottom: 2.5rem;
   }
 
   .act-btn-container{
-
-    .btn-service{
-      font-size: 20px;
-      padding: 30px 80px;
+    margin-bottom: 2.5rem;
+    
+    .btn-service, .btn-signup{
+      font-size: 1rem;
+      padding: 1rem 4rem;
       border-radius: 40px;
 
-      @media screen and (max-width: 992px){
-        font-size: 19px;
-        padding: 25px 70px;
+      @include breakpoint-md {
+        margin: 0 0 10px;
+        width: 50%;
       }
 
-      @media screen and (max-width: 768px){
-        font-size: 17px;
-        padding: 20px 60px;
+      @include breakpoint-xs {
+        width: 100%;
+        margin: 0 0 10px;
       }
-
-      @media screen and (max-width: 567px){
-        font-size: 16px;
-        padding: 15px 50px;
-      }
-
-      @media screen and (max-width: 450px){
-        font-size: 15px;
-        padding: 10px 40px;
-      }
-
-      @media screen and (max-width: 350px){
-        font-size: 14px;
-        padding: 8px 36px;
-      }
-
-      @media screen and (max-width: 320px){
-        font-size: 13px;
-        padding: 6px 30px;
-      }
-    }
-
-    .btn-signup{
-      @extend .btn-service;
-      margin-left: 15px;
     }
   }
 }
@@ -389,63 +158,54 @@ header{
 .why-beryoga{
 
   .why-beryoga_title{
-    padding-bottom: 130px;
-    
-  	@media screen and (max-width: 1200px){
-	  padding-bottom: 100px;
-    }
+    max-width: 720px;
+    margin: 0 auto 6rem;
 
-  	@media screen and (max-width: 567px){
-	  padding-bottom: 70px;
-    }
-
-    h2{
-      text-align: center;
-      padding-bottom: 40px;
-    }
-
-    p{
-      text-align: center;
-      max-width: 660px;
-      margin: 0 auto;
+    .section-title{
+      @extend %section-title;
+      margin-bottom: 2rem;
     }
   }
 
   .advantages-container{
-  	padding-bottom: 125px;
-  	@media screen and (max-width: 1200px){
-	  padding-bottom: 65px;
-  }
+    margin-bottom: 6.25rem;
+    
+  	@include breakpoint-xl{
+      margin-bottom: 3.25;
+    }
+
+    @include breakpoint-xs{
+      margin-bottom: 0;
+    }
   
     .advantages-block{
 
-      article{
-        padding: 80px 0px 35px 0px;
+      .block-title{
+        @extend %block-title;
         text-align: center;
+        margin-bottom: 1rem;
+      }
 
-          @media screen and (max-width: 1200px){
-           padding: 50px 0px 25px 0px;
+      //imgs for blocks
+
+      @each $num in (1, 2, 3) {
+        &:nth-child(#{$num})::before {
+          content: '';
+          @include background-img('../img/why-beryoga_#{$num}-img.png', contain);
+          @include size(auto, 11rem);
+          display: block;
+          margin-bottom: 3.5rem;
         }
       }
 
-      p{
-        max-width: 275px;
-        margin: 0 auto;
+      .paragraph{
+        padding: 0 3.5rem;
         text-align: center;
         line-height: 1.6;
       }
       
-      img{
-      	display: block;
-        margin: 0 auto;
-
-        @media screen and (max-width: 768px){
-          max-width: 50%;
-        }
-      }
-
       @media screen and (max-width: 768px){
-        margin-bottom: 50px;
+        margin-bottom: 2.5rem;
       }
     }
   }
@@ -455,113 +215,122 @@ header{
 
 /* CLASSES START */
 
-.classes{
+.offers{
   position: relative;
-  max-width: 1920px;
-  margin: 0 auto;
-  padding-bottom: 230px;
+  margin-bottom: 11rem;
 
-  @media screen and (max-width: 1200px){
-	padding-bottom: 80px;
+  @include breakpoint-lg{
+    margin-bottom: 5rem;
   }
 
-  @media screen and (max-width: 567px){
-	padding-bottom: 20px;
-  }
+  &::before, &::after{
+    content: '';
+    position: absolute;
 
-  .classes_decorate_img1{
-  	position: absolute;
-  	left: 0;
-    top: 330px;
-    
-  	@media screen and (max-width: 1200px){
-	    display: none;
+    @include breakpoint-xs{
+      display: none;
     }
   }
 
-  .classes_decorate_img2{
-  	position: absolute;
-  	right: 0px;
+  &::before{
+    @include background-img('../img/offers-decorate_img1.png', contain);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include size(9rem, 19rem);
+  }
+
+  &:after {
+    @include background-img('../img/offers-decorate_img2.png', contain);
+    right: 0;
     top: 0;
-    
-  	@media screen and (max-width: 1200px){
-	    display: none;
-    }
+    @include size(7rem, 25rem);
   }
 
-  .classes-container{
-    max-width: 1300px;
-    margin: 0 auto;
+  @include breakpoint-xl{
+	  padding-bottom: 4rem;
   }
 
-  .classes-container{
-    padding-top: 120px;
-    
-  	@media screen and (max-width: 1200px){
-	  padding-top: 0px;
+  @include breakpoint-sm{
+	  padding-bottom: 1rem;
+  }
+
+  .offers-container{
+    display: flex;
+
+    @include breakpoint-lg{
+      flex-direction: column;
     }
 
-    .classes-f-col{
+    .offers-wrapper {
+      width: 50%;
 
-      img{
-        max-width: 100%;
-        height: auto;
-        display: block;
+      @include breakpoint-lg{
+        width: 100%;
+        text-align: center;
+      }
+    }
+  
+    &::before {
+      content: '';
+      display: block;
+      margin: auto 0;
+      @include size(50%, 35rem);
+      @include background-img('../img/offers-main_img.png', contain);
+      
+        @include breakpoint-lg{
+          width: 100%;
+        }
+    }
 
-	    @media screen and (max-width: 1200px){
+    .section-title{
+      @extend %section-title;
+      margin: 6rem 0 3.7rem;
+    }
+
+    .offers-item{
+      $icon-width: 30px;
+      $icon-height: 25px;
+      $block-indent: 74px;
+
+      padding-left: $block-indent;
+
+      @include breakpoint-lg{
+        width: 60%;
         margin: 0 auto;
-        max-width: 85%;
-        }
-      }
-    }
-
-    .classes-s-col{
-      padding-top: 30px;
-      h3{
-        padding-bottom: 80px;
-        
-      	@media screen and (max-width: 1200px){
-		      text-align: center;
-	      }
+        padding-left: 0;
+        text-align: center;
       }
 
-      .classes-item{
-        margin-left: 72px;
-        
-      	@media screen and (max-width: 1200px){
-	        margin-left: 0px;
-        }
-        
-      	article{
-          position: relative;
-          
-      	  &::after{
-      	    content: url('../img/classes_check_img.png');
-            position: absolute;
-            left: -50px;
-            top: -2px;
-            @media screen and (max-width: 1200px){
-	          left: 50%;
-	          margin-left: -15px;
-	          top: -40px;
-	        }
+      @include breakpoint-xs{
+        width: 100%;
+      }
+
+      .block-title {
+        @extend %block-title;
+        position: relative;
+
+        @include breakpoint-lg{
+          padding-top: $icon-height + 10px;
         }
 
-          @media screen and (max-width: 1200px){
-	          text-align: center;
-	        }
-        }
+        &::before{
+          content: '';
+          @include size($icon-width, $icon-height);
+          @include background-img('../img/offers_check_img.png', contain);
+          position: absolute;
+          left: -$block-indent/2;
+          transform: translateX(-50%);
 
-	    p{
-	  	  padding: 15px 0px 50px 0px;
-        max-width: 460px;
-        
-	      @media screen and (max-width: 1200px){
-	        text-align: center;
-	        margin: 0 auto;
-	        padding: 15px 0px 60px 0px;
-	        }
-	      }
+          @include breakpoint-lg{
+            top: 0;
+            left: 50%;
+          }
+        }
+      }
+    
+    .paragraph{
+      padding: 0 0 1.5rem;
       }
     }
   }
@@ -569,577 +338,422 @@ header{
 
 /* CLASSES END */
 
-/* HEALING POWER START */
+/* BLOG START */
 
-.healing-power{
-
-  .healing-power_info{
-
-    span{
-      font-size: 20px;
-      color: $main-color;
-    }
-
-    h4{
-      padding: 13px 0px 70px 0px;
-
-      @media screen and (max-width: 567px){
-		    padding-bottom: 40px;
-	    }
-    }
-
-    p{
-      max-width: 390px;
-      margin-left: 55px;
-      padding-bottom: 70px;
-
-      @media screen and (max-width: 1200px){
-        text-align: center;
-        margin: 0 auto;
-        max-width: 600px;
-      }
-
-      @media screen and (max-width: 567px){
-        padding-bottom: 30px;
-      }
-    }
-
-    .read-more-link{
-      margin-left: 55px;
-    }
-  }
-
-  .healing-power_img{
-    img{
-    	max-width: 100%;
-    	height: auto;
-      display: block;
-      
-      @media screen and (max-width: 1200px){
-        margin: 0 auto;
-        padding-bottom: 50px;
-        max-width: 85%;
-	    }
-    }
-  }
-}
-
-/* HEALING POWER END */
-
-/* FIVE WAYS START */
-
-.five-ways{
-  padding-top: 420px;
-  max-width: 1920px;
-  margin: 0 auto;
+.blog {
   position: relative;
 
-  @media screen and (max-width: 1200px){
-	  padding-top: 160px;
-  }
-
-  @media screen and (max-width: 567px){
-	  padding-top: 60px;
-  }
-
-  .five-ways_decorate_img1{
+  &::before, &::after{
+    content: '';
     position: absolute;
+
+    @include breakpoint-xs{
+      display: none;
+    }
+  }
+
+  &::before{
+    @include background-img('../img/5ways_decoration_2img.png', contain);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include size(11rem, 23rem);
+  }
+
+  &:after {
+    @include background-img('../img/5ways_decoration_1img.png', contain);
     right: 0;
     top: 0;
-
-    @media screen and (max-width: 1200px){
-	    display: none;
-    }
+    @include size(9.75rem, 30rem);
   }
 
-  .five-ways_decorate_img2{
-    position: absolute;
-    left: 0;
-    top: 0;
+  .article {
+    display: flex;
+    margin-bottom: 11rem;
 
-    @media screen and (max-width: 1200px){
-	    display: none;
-    }
-  }
-
-  .five-ways_decorate_img3{
-    @extend .five-ways_decorate_img1;
-  }
-
-  .five-ways_img{
-
-  	img{
-      max-width: 100%;
-      height: auto;
-      display: block;
-
-      @media screen and (max-width: 1200px){
-        margin: 0 auto;
-        padding-bottom: 40px;
-        max-width: 85%;
-	    }
-  	}
-  }
-
-  .five-ways_info{
-
-    h5{
-      padding-bottom: 65px;
-
-        @media screen and (max-width: 1200px){
-          text-align: center;
-        }
-
-      @media screen and (max-width: 567px){
-          padding-bottom: 40px;
-          text-align: none;
-        }
+    @include breakpoint-lg{
+      flex-direction: column!important;
+      margin-bottom: 5rem;
     }
 
-    .five-ways_info_paragraphs{
-
-	    p{
-	      max-width: 550px;
-	      padding-bottom: 10px;
-        margin-left: 100px;
+    &:nth-child(even)::after, &:nth-child(odd)::before{
+        content: '';
+        display: block;
+        margin: auto 0;
+        @include size(50%, 35rem);
         
-	      &:last-child{
-          padding-bottom: 60px;
-          
-	        @media screen and (max-width: 567px){
-            padding-bottom: 40px;
+          @include breakpoint-lg{
+            width: 100%;
+            margin-bottom: 2rem;
           }
-        }
-        
-	      @media screen and (max-width: 1200px){
-          text-align: center;
-          margin: 0 auto;
-        }
-	    }
-     }  
+    }
+    
+    &:nth-child(even) {
 
-    .read-more-link{
-      margin-left: 100px;
+      &::after {
+        @include background-img('../img/healing_img.png', contain);
+      }
+    }
+
+    &:nth-child(odd) {
+
+      &::before {
+        @include background-img('../img/five-ways_main_img.png', contain);
+        background-position: left center;
+
+        @include breakpoint-lg{
+          background-position: center;
+        }
+      }
+    }
+  }
+
+  .block-title {
+    @extend %section-title;
+    margin-bottom: 2rem;
+
+    @include breakpoint-lg{
+      text-align: center;
+    }
+  }
+
+  .article_autor {
+    font-family: 'FivoSans Oblique';
+    font-size: 1rem;
+    color: $black;
+  }
+
+  .article_info {
+    width: 50%;
+
+    @include breakpoint-lg{
+      width: 70%;
+      margin: 0 auto;
+      order: 1;
+    }
+
+    @include breakpoint-sm{
+      width: 100%;
+    }
+  }
+
+  .article_info_content {
+    padding-left: 6rem;
+
+    @include breakpoint-lg{
+      padding-left: 0;
+    }
+    
+    .read-more-link {
+      display: block;
+      margin-top: 3rem;
+      @extend %link;
     }
   }
 }
 
-/* FIVE WAYS END */
+/* BLOG END */
 
-/* FOOTER / OFFERS START */
+/* FOOTER / PRICES START */
 
-.offers{
-  background: url(../img/footer-bg.png);
-  padding-top: 550px;
-  background-repeat: no-repeat;
+.main-footer{
+  @include background-img('../img/footer-bg.png', cover);
+  padding-top: 5rem;
   background-position: center top;
-  overflow-x: hidden;
+  position: relative;
 
-  @media screen and (max-width: 1200px){
-	 background-position: center bottom;
-	 padding-top: 150px;
+  &::before, &::after{
+    content: "";
+    position: absolute;
+    @include size(10rem, 17rem);
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include breakpoint-sm{
+      display: none;
+    }
   }
 
-  @media screen and (max-width: 478px){
-	 padding-top: 80px;
+  &::before {
+    left: 0;
+    @include background-img('../img/offers-decorate_img1.png', contain);
   }
 
-  .offers-packets{
+  &::after {
+    right: 0;
+    @include background-img('../img/5ways_decoration_3img.png', contain);
+  }
+
+  .prices-packets{
   	display: flex;
-  	justify-content: space-between;
-    padding-bottom: 150px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7.5rem;
     
-  	@media screen and (max-width: 1200px){
+  	@include breakpoint-lg{
       flex-direction: column;
-      align-items: center;
     }
 
-    @media screen and (max-width: 768px){
-	   padding-bottom: 60px;
+    @include breakpoint-md{
+      margin-bottom: 5rem;
     }
 
-    .offers-first-packet{
-      background-color: #FFF;
-      padding: 60px 0px 30px 0px;
-      width: 475px;
-      height: 680px;
+    .prices-packet{
+      padding: 3rem 3.5rem 2.8rem;
+      @include size(33%, auto);
       border-radius: 20px;
-      box-shadow: -8px 8px 20px #7ce0fb;
-      
-      @media screen and (max-width: 1200px){
-        margin-bottom: 40px;
-      } 
+      box-shadow: 0px 37px 136px 0px rgba(255, 106, 109, 0.19);
+      background-color: $white; 
+      overflow: hidden;
 
-      @media screen and (max-width: 768px){
-        width: 400px;
-        height: 600px;
-        padding: 45px 0px 30px 0px;
+      @include breakpoint-xl{
+        padding: 3rem 1.5rem 2.8rem;
       }
-      
-      @media screen and (max-width: 478px){
-        width: 290px;
-        height: 490px;
-        padding: 15px 0px 10px 0px;
+
+      @include breakpoint-lg{
+        margin-bottom: 2rem;
+        width: 70%!important;
       }
-      
+
+      @include breakpoint-xs{
+        width: 90%!important;
+      }
+
+      .block-title{
+        @include font(700);
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .prices-content{
+
+        @include breakpoint-lg{
+          display: flex;
+          margin: 2rem 0;
+        }
+
+        @include breakpoint-sm{
+          flex-direction: column;
+          margin: 0;
+        }
+      }
+
       ul{
-        list-style: none;
-        
+        @include reset-list;
+        margin-bottom: 2.5em;
+
+        @include breakpoint-lg{
+          margin: 0 auto;
+          width: 70%;
+        }
+
+        @include breakpoint-sm{
+          width: 100%;
+        }
+
         li{
-          padding-left: 125px;
-          position: relative;
-          margin-bottom: 30px;
-          font-family: $font-light;
+          display: flex;
+          margin-bottom: 1.5rem;
+          @include font(300);
+          font-size: .9rem;
+          color: $gray;
           line-height: 2.3;
-          color: $main-color;
+          vertical-align: center;
 
-            @media screen and (max-width: 478px){
-              padding-left: 70px;
-              font-size: 17px;
-            }
-
-            &::after{
-              content: url('../img/check_offer1.png');
-              position: absolute;
-              left: 55px;
-
-            @media screen and (max-width: 478px){
-              left: 15px;
-            }
+          &:before{
+            content: '';
+            padding-left: 1.5rem;
+            display: block;
+            box-sizing: content-box;
+            @include size(2rem, 2rem);
+            @include background-img('../img/check_offer1.png', contain);
           }
         }
       }
-    
-      .offers_package-rate{
-        position: relative;
-        padding-top: 50px;
-        left: 50%;
-        margin-left: -100px;
-        
-        @media screen and (max-width: 768px){
-          padding-top: 0px;
+
+      .prices_package-rate{
+        text-align: center;
+        @include font(400);
+        font-size: 7.5rem;
+        line-height: 1;
+        color: $gray;
+
+        @include breakpoint-xl{
+          font-size: 5rem;
         }
-        
-        @media screen and (max-width: 478px){
-          margin-left: -80px;
+
+        @include breakpoint-lg{
+          min-width: 50%;
         }
-        
+
+        @include breakpoint-xs{
+          font-size: 4rem;
+          margin: 1rem 0;
+        }
+            
         .sign-dollar{
-          position: absolute;
-          top: 45px;
-          left: -25px;
-          font-size: 48px;
-          color: #7e7c7c;
+          font-size: 2.4rem;
+          vertical-align: 4.5rem;
           
-          @media screen and (max-width: 478px){
-            top: 25px;
+          @include breakpoint-xl{
+            vertical-align: 3.5rem;
           }
-        }
-        
-        .offer-cost{
-          font-size: 150px;
-          color: #7e7c7c;
-          margin-left: 20px;
-          
-          @media screen and (max-width: 768px){
-            font-size: 130px;
-          }
-          
-          @media screen and (max-width: 478px){
-            font-size: 95px;
-          }
+
+          @include breakpoint-xs{
+            font-size: 2rem;
+            vertical-align: 2rem;
+          }  
         }
         
         .offer-time{
-          font-size: 30px;
-          color: #7e7c7c;
+          font-size: 1.5rem;
+          
+          @include breakpoint-xl{
+            font-size: 1.2rem;
+          }
         }
 
         .payment{
-          padding: 20px 0px 40px 0px;
-          color: #7e7c7c;
-          margin-left: 40px;
-          display: block;
+          margin: 1rem 0 2.8rem;
           font-family: $font-oblique;
-          
-          @media screen and (max-width: 478px){
-            margin-left: 25px;
-            padding: 15px 0px 25px 0px;
-          }  
+          font-size: .9rem;
+          color: $gray;
+          text-align: center;
         }
       }
-    
-      .btn-become-member{
-        border-radius: 40px;
-        text-align: center;
-        margin: 0 auto;
-        display: block;
-        background-color: #7ce0fb;
-        width: 225px;
-        border: solid 2px #7ce0fb;
-        height: 66px;
-        line-height: 66px;
-        box-shadow: -8px 8px 20px #7ce0fb;
       
-        &:hover{
-          color: #7ce0fb;
-          background-color: transparent;
-          box-shadow: none;
-        }
-        
-        @media screen and (max-width: 992px){
-          font-size: 17px;
-          width: 200px;
-          height: 55px;
-          line-height: 55px;
-        }
-        
-        @media screen and (max-width: 567px){
-          font-size: 14px;
-          width: 180px;
-          height: 45px;
-          line-height: 45px;
+      .btn-become-member{
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+        border: none;
+        display: block;
+
+        @include font(400);
+        border-radius: 38px;
+        line-height: 4.3;
+        color: $white;
+        font-size: .9rem;
+        background-image: -moz-linear-gradient( 66deg, rgb(33,172,221) 0%, rgb(157,218,233) 100%);
+        background-image: -webkit-linear-gradient( 66deg, rgb(33,172,221) 0%, rgb(157,218,233) 100%);
+        background-image: -ms-linear-gradient( 66deg, rgb(33,172,221) 0%, rgb(157,218,233) 100%);
+        box-shadow: 0px 21px 23.52px 0.48px rgba(95, 206, 244, 0.29);
+
+        @include breakpoint-sm{
+          width: 100%;
         }
       }
     }
-    
-    .offers-second-packet{
-      @extend .offers-first-packet;
-      box-shadow: 0px 0px 40px 0px #fcb3b4;
-      width: 500px;
-      height: 768px;
-      z-index: 1;
-      padding: 0px;
-      overflow-x: hidden;
+
+    .prices-packet[data-label="best-seller"]{
       position: relative;
-      top: -50px;
+      padding-top: 8.25rem;
+      width: 37%;
 
-      @media screen and (max-width: 1200px){
-        top: 0px;
-      } 
-
-      @media screen and (max-width: 768px){
-        width: 425px;
-        height: 686px;
-      }
-
-      @media screen and (max-width: 478px){
-        width: 290px;
-        height: 490px;
-      }
-
-      article{
+      &::before{
+        content: 'Best seller';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        width: 100%;
+        @include font(700);
+        font-size: 1.5rem;
         text-align: center;
-        font-size: 30px;
-        color: #FFF;
-        font-family: $font-bold;
+        color: $white;
         text-transform: uppercase;
         background-color: $active-color;
-        padding: 45px 0px 35px 0px;
-        margin-bottom: 40px;
-        
-        @media screen and (max-width: 768px){
-          margin-bottom: 30px;
-          padding: 35px 0px 25px 0px;
-
-        }
-
-        @media screen and (max-width: 478px){
-          margin-bottom: 20px;
-          padding: 25px 0px 15px 0px;
-          font-size: 24px;
-        }
+        line-height: 3.5;
       }
 
-      ul{
-
-        li{
-
-          &:after{ 
-          content: url('../img/check_offer2.png');	
-          }
-
-          @media screen and (max-width: 478px){
-            margin-bottom: 15px;
-          }
-        }
+      ul li:before{
+        @include background-img('../img/check_offer2.png', contain);
       }
-
       .btn-become-member{
-        box-shadow: -8px 8px 20px $active-color;
-        background-color: $active-color;
-        border: solid 2px $active-color;
-
-        &:hover{
-          color: $active-color;
-        }
-      }
-
-      .offers_package-rate{
-        margin-left: -165px;
-
-        @media screen and (max-width: 768px){
-          margin-left: -145px;
-        }
-
-        @media screen and (max-width: 478px){
-          margin-left: -105px;
-        }
-
-        .payment{
-          margin-left: 30px;
-
-          @media screen and (max-width: 478px){
-            margin-left: -10px;
-          }
-        }
-
-        .offer-cost{
-          @media screen and (max-width: 768px){
-            font-size: 130px;
-          }
-
-          @media screen and (max-width: 478px){
-            font-size: 80px;
-          }
-        }
-      }
-    }
-    .offers-third-packet{
-      @extend .offers-first-packet;
-
-      article{
-        text-align: center;
-        font-size: 30px;
-        color: #7e7c7c;
-        font-family: $font-bold;
-        padding-bottom: 40px;
+        background: rgb(255, 106, 109);
+        box-shadow: 0px 21px 23.52px 0.48px rgba(226, 88, 91, 0.29);
       }
     }
   }
 }
 
-.footer-wrap{
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-container{
+.footer-info{
   margin: 0 auto;
   background-color: rgba(255,255,255,0.5);
-  padding: 110px 0px 40px 0px;
+  padding: 5.5rem 0 2rem;
   border-top-right-radius: 200px;
   border-top-left-radius: 200px;
   max-width: 1420px;
 
-   @media screen and (max-width: 1200px){
+  @include breakpoint-lg{
 	  border-top-right-radius: 60px;
     border-top-left-radius: 60px;
   }
   
   @media screen and (max-width: 568px){
 	  padding-bottom: 40px;
-
-  }
-  
-  .contact-us{
-
-    @media screen and (max-width: 992px){
-      padding-bottom: 30px;
-    }
-  
-    span{
-      font-family: $font-heavy;
-      text-transform: uppercase;
-      color: #7e7c7c;
-      text-align: center;
-      margin-left: 25px;
-
-      @media screen and (max-width: 1200px){
-        margin-left: 0px;
-      }
-    }
-
-    p{
-      max-width: 200px;
-      font-size: 16px;
-      line-height: 1.6;
-      padding-top: 50px;
-      text-align: left;
-        
-      @media screen and (max-width: 576px){
-        max-width: 200px;
-        margin: 0 0 0 0;
-      }
-    }
-
-    a{
-      text-decoration: none;
-      color: #7e7c7c;
-
-      &:hover{
-        color: $active-color;
-      }
-    }
   }
 
-  .about-us{
+  .footer-info_list{
+    @include horizontal-list;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto 4.2rem;
 
-  	@media screen and (max-width: 568px){
-	  padding-bottom: 40px;
-  }
-  
-    span{
-      font-family: $font-heavy;
-      text-transform: uppercase;
-      color: #7e7c7c;
-      text-align: center;
+    .footer-info_item{
 
-    }
+      width: 25%;
 
-    nav{
-      padding-top: 55px;
-      list-style-type: none;
-
-      @media screen and (max-width: 578px){
-        padding: 25px 0px 40px 0px;
+      @include breakpoint-md{
+        width: 50%;
+        margin-bottom: 2.5rem;
       }
 
-      li{
-        padding-bottom: 20px;
-
+      .paragraph{
+        text-indent: 0;
+        margin-bottom: 1rem;
+         
         a{
-          text-decoration: none;
-          color: #7e7c7c;
-          transition: 0.2s;
+          @include reset-link;
+          color: $gray;
+        }
+      }
 
-          &:hover{
-            color: $active-color;
+      h5{
+        @include font(700);
+        text-transform: uppercase;
+        color: $gray;
+        font-size: .9rem;
+        margin-bottom: 2rem;
+  
+        @media screen and (max-width: 1200px){
+          margin-left: 0px;
+        }
+      }
+
+      .footer-nav{
+
+        ul{
+          @include reset-list;
+
+          li a{
+            @include font(400);
+            font-size: .9rem;
+            color: $gray;
+            line-height: 2.2;
           }
         }
       }
     }
   }
 
-  .our-programs{
-    @extend .about-us;
-  }
-
-  .support-trails{
-    @extend .about-us;
-  }
-
-  p{
-  	padding: 105px 0 0px 0px;
-  	text-align: center;
-    color: #7e7c7c;
-
-    @media screen and (max-width: 578px){
-      padding: 0px 0px 0px 0px;
-      font-size: 16px;
-      max-width: 250px;
-      margin: 0 auto;
-    }
+  .copyright{
+    @include font(400);
+    font-size: .9rem;
+    color: $gray;
+    text-align: center;
   }
 }
-

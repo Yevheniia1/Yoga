@@ -1,27 +1,8 @@
-class obj  {
+const menuButton = document.getElementById('menu-btn'),
+      headerNavigation = document.getElementById('top-nav_menu')
 
-  state() {
-      let todoData = [
-        this.createTodoItem('Drink Coffee'),
-        this.createTodoItem('Make Awesome App')
-      ]
-
-      return todoData.length
-
-   }
-
-  createTodoItem(label) {
-
-    return{
-    label,
-    important: false,
-    done: false,
-    id: this.result
-    }
-  }
-
-  result = this.state()
-}
-
-
-let frf = new obj;
+menuButton.addEventListener('click', () => {
+    headerNavigation.classList.toggle('top-nav_menu_active');
+    menuButton.classList.toggle('menu-btn_active');
+    document.body.classList.toggle('overflow-hidden');
+})

@@ -11,7 +11,7 @@
 }
 
 @font-face {
-    font-family:'FivoSans';
+    font-family:'FivoSans Oblique';
     src: url('../fonts/FivoSans-Oblique.eot');
 	src: url('../fonts/FivoSans-Oblique.eot?#iefix') format('embedded-opentype'),
 		url('../fonts/FivoSans-Oblique.woff2') format('woff2'),
@@ -72,6 +72,38 @@
 
 $font-oblique: 'Fivo Sans Oblique', sans-serif;;
 $font-regular: 'Fivo Sans Regular', sans-serif;
+$font-medium: 'Fivo Sans M', sans-serif;
 $font-heavy: 'Fivo Sans Heavy', sans-serif;
 $font-light: 'Fivo Sans Light', sans-serif;
 $font-bold: 'Fivo Sans Bold', sans-serif;
+
+%section-title{
+    @include font(600);
+    font-size: 2.5rem;
+}
+
+%block-title{
+    @include font(600);
+    font-size: 1.2rem;
+}
+
+%logo{
+    @include reset-link;
+    @include font(700);
+    color: $active-color;
+    font-size: 1.6rem;
+}
+
+%menu-item {
+    @include reset-link;
+    @include font(500);
+    font-size: .9rem;
+    color: $gray;
+    line-height: 2.5;
+}
+
+%link {
+    @include font(400);
+    font-size: .9rem;
+    color: $blue;
+}

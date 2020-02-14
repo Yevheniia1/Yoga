@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'FivoSans';
+  src: url("../fonts/FivoSans-Light.eot");
+  src: url("../fonts/FivoSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/FivoSans-Light.woff2") format("woff2"), url("../fonts/FivoSans-Light.woff") format("woff"), url("../fonts/FivoSans-Light.svg#FivoSans-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'FivoSans Oblique';
+  src: url("../fonts/FivoSans-Oblique.eot");
+  src: url("../fonts/FivoSans-Oblique.eot?#iefix") format("embedded-opentype"), url("../fonts/FivoSans-Oblique.woff2") format("woff2"), url("../fonts/FivoSans-Oblique.woff") format("woff"), url("../fonts/FivoSans-Oblique.svg#FivoSans-Oblique") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'FivoSans';
+  src: url("../fonts/FivoSans-Regular.eot");
+  src: url("../fonts/FivoSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/FivoSans-Regular.woff2") format("woff2"), url("../fonts/FivoSans-Regular.woff") format("woff"), url("../fonts/FivoSans-Regular.svg#FivoSans-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'FivoSans';
+  src: url("../fonts/FivoSans-Medium.eot");
+  src: url("../fonts/FivoSans-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/FivoSans-Medium.woff2") format("woff2"), url("../fonts/FivoSans-Medium.woff") format("woff"), url("../fonts/FivoSans-Medium.svg#FivoSans-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'FivoSans';
+  src: url("../fonts/FivoSans-Bold.eot");
+  src: url("../fonts/FivoSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/FivoSans-Bold.woff2") format("woff2"), url("../fonts/FivoSans-Bold.woff") format("woff"), url("../fonts/FivoSans-Bold.svg#FivoSans-Bold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'FivoSans';
+  src: url("../fonts/FivoSans-Heavy.eot");
+  src: url("../fonts/FivoSans-Heavy.eot?#iefix") format("embedded-opentype"), url("../fonts/FivoSans-Heavy.woff2") format("woff2"), url("../fonts/FivoSans-Heavy.woff") format("woff"), url("../fonts/FivoSans-Heavy.svg#FivoSans-Heavy") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal; }
