@@ -72,6 +72,9 @@
   line-height: 1.5;
   color: #3b3838;
   font-size: 2.5rem; }
+  @media screen and (max-width: 767px) {
+    .header-description .page-title, .why-beryoga .why-beryoga_title .section-title, .offers .offers-container .section-title, .blog .block-title {
+      font-size: 1.8rem; } }
 
 .why-beryoga .advantages-container .advantages-block .block-title, .offers .offers-container .offers-item .block-title {
   font-family: 'FivoSans';
@@ -240,7 +243,7 @@ header {
       min-height: 1000px; } }
   @media screen and (max-width: 991px) {
     header {
-      min-height: 850px; } }
+      min-height: 700px; } }
   @media screen and (max-width: 767px) {
     header {
       background-position: left top; } }
@@ -249,7 +252,7 @@ header {
   padding: 4rem 0 8rem; }
   @media screen and (max-width: 991px) {
     .heading {
-      padding: 4rem 2rem 8rem; } }
+      padding: 4rem 1rem 4rem; } }
   .heading .top-nav_menu {
     transition: .8s; }
     @media screen and (max-width: 991px) {
@@ -316,6 +319,10 @@ header {
     margin-bottom: 2.5rem; }
   .header-description .paragraph {
     margin-bottom: 2.5rem; }
+    @media screen and (max-width: 575px) {
+      .header-description .paragraph {
+        margin-bottom: 4.5rem;
+        color: #000000; } }
   .header-description .act-btn-container {
     margin-bottom: 2.5rem; }
     .header-description .act-btn-container .btn-service, .header-description .act-btn-container .btn-signup {

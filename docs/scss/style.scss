@@ -23,7 +23,7 @@ header{
   }
 
   @include breakpoint-md {
-    min-height: 850px;
+    min-height: 700px;
   }
 
   @include breakpoint-sm {
@@ -35,7 +35,7 @@ header{
    padding: 4rem 0 8rem;
 
    @include breakpoint-md{
-     padding: 4rem 2rem 8rem;
+     padding: 4rem 1rem 4rem;
    }
 
   .logo{
@@ -131,6 +131,11 @@ header{
 
   .paragraph{
     margin-bottom: 2.5rem;
+
+    @include breakpoint-xs {
+      margin-bottom: 4.5rem;
+      color: $black;
+    }
   }
 
   .act-btn-container{
@@ -225,7 +230,7 @@ header{
   @include breakpoint-lg{
     margin-bottom: 5rem;
   }
-  
+
   @include breakpoint-sm{
     margin-bottom: 2rem;
   }
