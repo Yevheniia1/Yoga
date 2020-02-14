@@ -1,6 +1,5 @@
 @import 'helpers/variables';
 @import 'helpers/mixins';
-@import 'helpers/extends';
 @import 'helpers/utilities';
 @import 'fonts.scss';
 @import 'base';
@@ -34,6 +33,10 @@ header{
 
 .heading{ 
    padding: 4rem 0 8rem;
+
+   @include breakpoint-md{
+     padding: 4rem 2rem 8rem;
+   }
 
   .logo{
     @extend %logo;
@@ -85,8 +88,8 @@ header{
   }
 
   #login{
-    margin-left: 100px;
-    padding: 0 40px;
+    margin-left: 5rem;
+    padding: 0 2rem;
     border: 0;
     border-radius: 35px;
 
@@ -95,7 +98,7 @@ header{
     transition: all $transition-base;
 
     @include breakpoint-md{
-      width: 20%;
+      width: 50%;
       margin: 2rem auto;
       line-height: 2.5;
     }
@@ -222,6 +225,10 @@ header{
   @include breakpoint-lg{
     margin-bottom: 5rem;
   }
+  
+  @include breakpoint-sm{
+    margin-bottom: 2rem;
+  }
 
   &::before, &::after{
     content: '';
@@ -281,11 +288,19 @@ header{
         @include breakpoint-lg{
           width: 100%;
         }
+
+        @include breakpoint-sm{
+          height: 25rem;
+        }
     }
 
     .section-title{
       @extend %section-title;
       margin: 6rem 0 3.7rem;
+
+      @include breakpoint-lg{
+        margin: 2.5rem 0;
+      }
     }
 
     .offers-item{
@@ -376,6 +391,10 @@ header{
       margin-bottom: 5rem;
     }
 
+    @include breakpoint-sm{
+      margin-bottom: 2rem;
+    }
+
     &:nth-child(even)::after, &:nth-child(odd)::before{
         content: '';
         display: block;
@@ -385,6 +404,10 @@ header{
           @include breakpoint-lg{
             width: 100%;
             margin-bottom: 2rem;
+          }
+
+          @include breakpoint-sm{
+            height: 25rem;
           }
     }
     
